@@ -1,0 +1,371 @@
+/* ── Reset & Base ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: #e5e5e5;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ── Shell & Mobile Container ── */
+.app-shell {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 0;
+}
+
+.mobile-container {
+  width: 375px;
+  min-height: 812px;
+  background: #ffffff;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 32px rgba(0, 0, 0, 0.12);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Page Wrappers ── */
+.page {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 812px;
+}
+
+/* ── Welcome Page ── */
+.welcome-page {
+  background: #F7F8F9;
+  justify-content: flex-end;
+  padding: 0 24px 48px;
+}
+
+.welcome-content {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 32px;
+}
+
+.welcome-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #1a1a1a;
+  letter-spacing: -0.3px;
+  line-height: 1.2;
+}
+
+.welcome-desc {
+  font-size: 15px;
+  color: #7d7d7d;
+  line-height: 1.5;
+  margin-top: 4px;
+}
+
+.welcome-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* ── Buttons ── */
+.btn-primary {
+  width: 100%;
+  padding: 16px;
+  background: #6C3AFF;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  letter-spacing: 0.1px;
+}
+
+.btn-primary:hover {
+  background: #5a2ee0;
+}
+
+.btn-primary:disabled {
+  background: #b0b0b0;
+  cursor: not-allowed;
+}
+
+.btn-secondary {
+  width: 100%;
+  padding: 16px;
+  background: #D6C9FF;
+  color: #1a1a1a;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  letter-spacing: 0.1px;
+}
+
+.btn-secondary:hover {
+  background: #c0b0f5;
+}
+
+/* ── Auth Pages (Login / Register) ── */
+.auth-page {
+  background: #F7F8F9;
+  padding: 40px 24px 32px;
+  justify-content: flex-start;
+}
+
+.auth-heading {
+  font-size: 26px;
+  font-weight: 700;
+  color: #1a1a1a;
+  line-height: 1.25;
+  margin-bottom: 8px;
+  letter-spacing: -0.3px;
+}
+
+.auth-subtext {
+  font-size: 14px;
+  color: #7d7d7d;
+  line-height: 1.5;
+  margin-bottom: 28px;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex: 1;
+}
+
+/* ── Form Fields ── */
+.field-group {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.field-label {
+  font-size: 12px;
+  font-weight: 500;
+  color: #6C3AFF;
+  margin-bottom: 6px;
+  letter-spacing: 0.2px;
+}
+
+.field-input {
+  width: 100%;
+  padding: 13px 14px;
+  border: 1.5px solid #dcdcdc;
+  border-radius: 8px;
+  font-size: 15px;
+  color: #1a1a1a;
+  background: #ffffff;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  font-family: inherit;
+}
+
+.field-input::placeholder {
+  color: #b0b0b0;
+}
+
+.field-input:focus {
+  border-color: #6C3AFF;
+  box-shadow: 0 0 0 3px rgba(108, 58, 255, 0.1);
+}
+
+/* ── Radio Group ── */
+.radio-label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #1a1a1a;
+  margin-bottom: 12px;
+}
+
+.radio-label span {
+  color: #6C3AFF;
+}
+
+.radio-group {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+
+.radio-option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-size: 15px;
+  color: #1a1a1a;
+}
+
+.radio-option input[type="radio"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #ccc;
+  border-radius: 50%;
+  cursor: pointer;
+  position: relative;
+  transition: border-color 0.2s ease;
+  flex-shrink: 0;
+}
+
+.radio-option input[type="radio"]:checked {
+  border-color: #6C3AFF;
+}
+
+.radio-option input[type="radio"]:checked::after {
+  content: '';
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: #6C3AFF;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* ── Form Footer (sticky bottom button) ── */
+.form-footer {
+  margin-top: auto;
+  padding-top: 24px;
+}
+
+/* ── Account Settings Page ── */
+.account-page {
+  background: #F7F8F9;
+  padding: 0;
+  justify-content: flex-start;
+}
+
+.account-header {
+  background: #ffffff;
+  padding: 24px 20px 0;
+  border-bottom: 1px dashed #e0e0e0;
+}
+
+.account-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 20px;
+}
+
+.account-profile-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding-bottom: 20px;
+}
+
+.avatar-wrapper {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  flex-shrink: 0;
+}
+
+.avatar-img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: #d0d0d0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.avatar-placeholder {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #9b7aff 0%, #6C3AFF 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 0.5px;
+}
+
+.avatar-camera {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 22px;
+  height: 22px;
+  background: #6C3AFF;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #ffffff;
+}
+
+.avatar-camera svg {
+  width: 11px;
+  height: 11px;
+  fill: #ffffff;
+}
+
+.account-info {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.account-name {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.account-email {
+  font-size: 13px;
+  color: #7d7d7d;
+}
+
+.account-body {
+  background: #ffffff;
+  padding: 20px;
+}
+
+.account-bio {
+  font-size: 14px;
+  color: #4a4a4a;
+  line-height: 1.6;
+}
+
+.account-divider {
+  height: 1px;
+  background: repeating-linear-gradient(
+    to right,
+    #e0e0e0 0px,
+    #e0e0e0 6px,
+    transparent 6px,
+    transparent 12px
+  );
+  margin: 0 20px;
+}
